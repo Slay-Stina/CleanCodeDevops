@@ -1,0 +1,49 @@
+name: Manual .NET build
+
+on:
+  workflow_dispatch
+
+jobs:
+  print-runtime-context:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🪐 Start build process
+        run: echo "Build process has started..."
+
+      - &echo-template
+        name: Echo template
+        run: echo "This is a reusable step"
+        shell: bash
+
+      - name: 📋 Show runtime context
+        run: |
+          echo "🌐 Runner OS: ${{ runner.os }}"
+          echo "📦 Repository: ${{ github.repository }}"
+          echo "🌊 Workflow: ${{ github.workflow}}"
+          echo "➡️ Triggered by: ${{ github.event_name }}"
+          echo "🎭 Actor: ${{ github.actor }}"
+          echo "🔢 Run number: ${{ github.run_number }}"
+          echo "🪵 Branch: ${{ github.ref }}"
+
+      - *echo-template
+
+  build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5.0.0
+
+      - name: install .NET 9
+        uses: actions/setup-dotnet@v5.0.0
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Build project
+        working-directory: CleanCodeDevops.app
+        run: dotnet build
+
+      - name: Run code
+        working-directory: CleanCodeDevops.app
+        run: dotnet run
