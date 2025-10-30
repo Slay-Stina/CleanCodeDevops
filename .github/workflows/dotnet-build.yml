@@ -27,3 +27,23 @@ jobs:
           echo "🪵 Branch: ${{ github.ref }}"
 
       - *echo-template
+
+  build-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5.0.0
+
+      - name: install .NET 9
+        uses: actions/setup-dotnet@v5.0.0
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Build project
+        working-directory: CleanCodeDevops\CleanCodeDevops.app
+        run: dotnet build
+
+      - name: Run code
+        working-directory: CleanCodeDevops\CleanCodeDevops.app
+        run: dotnet run
