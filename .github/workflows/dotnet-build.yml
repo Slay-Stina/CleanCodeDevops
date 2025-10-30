@@ -18,5 +18,5 @@ jobs:
           echo "🌊 Workflow: ${{ github.workflow}}"
           echo "➡️ Triggered by: ${{ github.event_name }}"
           echo "🎭 Actor: ${{ github.actor }}"
-          echo "🔢 Run number: ${{ github.runt_number }}"
+          echo "🔢 Run number: ${{ github.run_number }}"
           echo "🪵 Branch: ${{ github.ref }}"
