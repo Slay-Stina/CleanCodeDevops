@@ -1,4 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-
-Console.WriteLine("Hello, World!");
-Console.WriteLine("JUST ANOTHER LINE OF TEXT");
+// TODO: change the CW
+Console.WriteLine("Hello, My friends in GitHub Workflow!");
+Console.ReadLine();

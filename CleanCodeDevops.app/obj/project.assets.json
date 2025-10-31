@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\augus\\RiderProjects\\CleanCodeDevops\\CleanCodeDevops.app\\CleanCodeDevops.app.csproj",
-      "projectName": "CleanCodeDevops.app",
-      "projectPath": "C:\\Users\\augus\\RiderProjects\\CleanCodeDevops\\CleanCodeDevops.app\\CleanCodeDevops.app.csproj",
+      "projectUniqueName": "C:\\Users\\augus\\RiderProjects\\CleanCodeDevops\\CleanCodeDevOps.App\\CleanCodeDevOps.App.csproj",
+      "projectName": "CleanCodeDevOps.App",
+      "projectPath": "C:\\Users\\augus\\RiderProjects\\CleanCodeDevops\\CleanCodeDevOps.App\\CleanCodeDevOps.App.csproj",
       "packagesPath": "C:\\Users\\augus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\augus\\RiderProjects\\CleanCodeDevops\\CleanCodeDevops.app\\obj\\",
+      "outputPath": "C:\\Users\\augus\\RiderProjects\\CleanCodeDevops\\CleanCodeDevOps.App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
