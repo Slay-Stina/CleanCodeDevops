@@ -11,15 +11,15 @@ public class Package : IPackage
     public double Volume { get; set; }
     public int Weight { get; set; }
 
-    public Package(int width, int height, double weight)
+    public Package()
     {
-        Width = width;
-        Height = height;
-        Volume = width * height;
-        Weight = this.CheckAndReturnWeight();
+        Width = Console.ReadLine().ToInt();
+        Height = Console.ReadLine().ToInt();
+        Volume = Width * Height;
+        Weight = Console.ReadLine().ToInt() > 0 ? this.CheckAndReturnWeight() : throw new Exception("Invalid weight");
         Price = this.IsSmallPackage()
             ? SmallPackagePrice(Weight)
-            : Volume * weight;
+            : Volume * Weight;
     }
 
     public int SmallPackagePrice(int weight)

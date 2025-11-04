@@ -2,7 +2,7 @@
 
 public class Square : Package
 {
-    public Square(int width, int height, int weight) : base(width, height, weight)
+    public Square() : base()
     {
         Price = Price += 10000;
     }

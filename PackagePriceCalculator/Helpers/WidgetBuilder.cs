@@ -6,34 +6,43 @@ public class WidgetBuilder
 {
     public Layout MakeLayout()
     {
-        var layout = new Layout(
-            new Panel(new Markup("Hello [blue]World![/]"))
-                .Header("Choose package type:")
-                .Padding(new Padding(3, 3))
-                .Expand());
-        return layout;
-    }
-
-    public Layout UpdateLayout(Layout layout)
-    {
-        layout.SplitColumns(
-            new Layout("Left"),
-            new Layout("Right"));
+        var layout = new Layout("Root")
+            .SplitRows
+            (
+                new Layout("Top")
+                    .SplitColumns
+                    (
+                        new Layout
+                        ("Left",
+                    new Panel(new Markup("Hello [blue]World![/]"))
+                                .Header("Choose package type")
+                                .Expand()
+                        ),
+                        new Layout("Right").Invisible()
+                    ),
+                
+                new Layout("Bottom",
+                    new  Panel(
+                    MakeTable().Expand())
+                        .Header("[blue]Created packages[/]")
+                        .Expand()
+                )
+            );
         return layout;
     }
 
     public Table MakeTable()
     {
         var table = new Table();
-        table.Title = new TableTitle("Choose type");
         // Add some columns
-        table.AddColumn("Foo");
-        table.AddColumn(new TableColumn("Bar").Centered());
+        table.AddColumns(
+            "Type",
+            "Price",
+            "Width",
+            "Height",
+            "Volume",
+            "Weight");
 
-        // Add some rows
-        table.AddRow("Baz", "[green]Qux[/]");
-        table.AddRow(new Markup("[blue]Corgi[/]"), new Panel("Waldo"));
-        table.Expand = true;
         return table;
     }
 }
