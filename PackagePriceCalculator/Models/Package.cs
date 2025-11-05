@@ -2,6 +2,7 @@
 
 using Extensions;
 using Interfaces;
+using Spectre.Console;
 
 public class Package : IPackage
 {
@@ -13,10 +14,12 @@ public class Package : IPackage
 
     public Package()
     {
-        Width = Console.ReadLine().ToInt();
-        Height = Console.ReadLine().ToInt();
+        Width = AnsiConsole.Ask<int>("Width: ");
+        Height = AnsiConsole.Ask<int>("Height: ");
         Volume = Width * Height;
-        Weight = Console.ReadLine().ToInt() > 0 ? this.CheckAndReturnWeight() : throw new Exception("Invalid weight");
+        Weight = AnsiConsole.Ask<int>("Weight: ") > 0 
+            ? this.CheckAndReturnWeight() 
+            : throw new Exception("Invalid weight");
         Price = this.IsSmallPackage()
             ? SmallPackagePrice(Weight)
             : Volume * Weight;

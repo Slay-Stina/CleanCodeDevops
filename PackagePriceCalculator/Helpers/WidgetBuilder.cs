@@ -1,37 +1,30 @@
 ﻿namespace PackagePriceCalculator.Helpers;
 
+using Models;
 using Spectre.Console;
 
 public class WidgetBuilder
 {
+    public static Table table = MakeTable();
+    
     public Layout MakeLayout()
     {
         var layout = new Layout("Root")
             .SplitRows
             (
-                new Layout("Top")
-                    .SplitColumns
-                    (
-                        new Layout
-                        ("Left",
-                    new Panel(new Markup("Hello [blue]World![/]"))
-                                .Header("Choose package type")
-                                .Expand()
-                        ),
-                        new Layout("Right").Invisible()
-                    ),
+                new Layout("Top"),
                 
                 new Layout("Bottom",
-                    new  Panel(
-                    MakeTable().Expand())
+                    new  Panel(table.Expand())
                         .Header("[blue]Created packages[/]")
                         .Expand()
                 )
             );
+        
         return layout;
     }
 
-    public Table MakeTable()
+    private static Table MakeTable()
     {
         var table = new Table();
         // Add some columns
@@ -42,7 +35,17 @@ public class WidgetBuilder
             "Height",
             "Volume",
             "Weight");
-
         return table;
+    }
+
+    public void UpdateTable(Package package)
+    {
+        table.AddRow(
+            nameof(package),
+            package.Price.ToString(),
+            package.Width.ToString(),
+            package.Height.ToString(),
+            package.Volume.ToString(),
+            package.Weight.ToString());
     }
 }
