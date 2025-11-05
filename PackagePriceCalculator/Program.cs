@@ -49,11 +49,14 @@ void ChoosePackageType(string newPackage)
     var rule = new Rule($"[red]New {newPackage}[/]")
     { Justification = Justify.Left };
     AnsiConsole.Write(rule);
+    var width = AnsiConsole.Ask<int>("Width: ");
+    var height = AnsiConsole.Ask<int>("Height: ");
+    var weight = AnsiConsole.Ask<int>("Weight: ");
 
     Package? package = newPackage switch
     {
-        "Square" => new Square(),
-        "Pipe" => new Pipe(),
+        "Square" => new Square(width, height, weight),
+        "Pipe" => new Pipe(width, height, weight),
         _ => null
     };
 

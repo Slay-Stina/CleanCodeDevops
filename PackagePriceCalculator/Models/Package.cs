@@ -5,18 +5,18 @@ using Spectre.Console;
 
 public class Package
 {
-    public double Price { get; set; }
+    public int Price { get; set; }
     public int Width { get; set; }
     public int Height { get; set; }
-    public double Volume { get; set; }
+    public int Volume { get; set; }
     public int Weight { get; set; }
 
-    public Package()
+    protected Package(int width, int height, int weight)
     {
-        Width = AnsiConsole.Ask<int>("Width: ");
-        Height = AnsiConsole.Ask<int>("Height: ");
+        Width = width;
+        Height = height;
         Volume = Width * Height;
-        Weight = AnsiConsole.Ask<int>("Weight: ");
+        Weight = weight;
         this.CheckAndReturnWeight();
         Price = this.IsSmallPackage()
             ? SmallPackagePrice(Weight)
