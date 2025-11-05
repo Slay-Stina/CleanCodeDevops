@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorAppTests", "Calcu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackagePriceCalculator", "PackagePriceCalculator\PackagePriceCalculator.csproj", "{48E0B4A9-0012-484C-901A-D45812B5592A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeAccess", "EmployeeAccess\EmployeeAccess.csproj", "{587D7E41-7FB4-462C-80BC-07016376A787}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeAccess.Test", "EmployeeAccess.Test\EmployeeAccess.Test.csproj", "{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{48E0B4A9-0012-484C-901A-D45812B5592A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48E0B4A9-0012-484C-901A-D45812B5592A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48E0B4A9-0012-484C-901A-D45812B5592A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{587D7E41-7FB4-462C-80BC-07016376A787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{587D7E41-7FB4-462C-80BC-07016376A787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{587D7E41-7FB4-462C-80BC-07016376A787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{587D7E41-7FB4-462C-80BC-07016376A787}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

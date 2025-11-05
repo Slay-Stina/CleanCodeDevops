@@ -62,4 +62,32 @@ public class CalculatorTests
         int b = 0;
         Assert.Throws<DivideByZeroException>(() => _sut.Divide(a, b));
     }
+
+    [Theory]
+    [InlineData(1, 2, 3)]
+    [InlineData(4, 5, 9)]
+    [InlineData(57, 13, 70)]
+    [InlineData(6, 7, 13)]
+    [InlineData(74, 12, 86)]
+    public void CanAdd(int a, int b, int sum)
+    {
+        var expected = sum;
+        var actual = _sut.Add(a, b);
+        Assert.Equal(sum, actual);
+    }
+    
+    [Theory]
+    [InlineData(10, 2, 5)]
+    [InlineData(9, 3, 3)]
+    [InlineData(5, 0, double.NaN)]
+    public void CanDivide(int a, int b, double expected)
+    {
+        if (b == 0)
+            Assert.Throws<DivideByZeroException>(() => _sut.Divide(a, b));
+        else
+        {
+            var result = _sut.Divide(a, b);
+            Assert.Equal(expected, result);
+        }
+    }
 }
