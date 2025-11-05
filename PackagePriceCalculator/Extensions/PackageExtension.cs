@@ -4,13 +4,13 @@ using Models;
 
 public static class PackageExtension
 {
-    public static int CheckAndReturnWeight(this Package package)
+    public static double CheckAndReturnWeight(this double weight)
     {
-        return package.Weight < 2 
-            ? 2 
-            : package.Weight > 20 
+        return weight < 2 ?
+            2 
+            : weight > 20 
             ? throw new Exception("Package too heavy") 
-            : package.Weight;
+            : weight;
     }
     public static bool IsSmallPackage(this Package package)
     {

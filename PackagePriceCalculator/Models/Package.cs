@@ -1,31 +1,29 @@
 ﻿namespace PackagePriceCalculator.Models;
 
 using Extensions;
-using Spectre.Console;
 
 public class Package
 {
-    public int Price { get; set; }
+    public double Price { get; set; }
     public int Width { get; set; }
     public int Height { get; set; }
     public int Volume { get; set; }
-    public int Weight { get; set; }
+    public double Weight { get; set; }
 
-    protected Package(int width, int height, int weight)
+    public Package(int width, int height, double weight)
     {
         Width = width;
         Height = height;
         Volume = Width * Height;
-        Weight = weight;
-        this.CheckAndReturnWeight();
+        Weight = weight.CheckAndReturnWeight();
         Price = this.IsSmallPackage()
             ? SmallPackagePrice(Weight)
             : Volume * Weight;
     }
 
-    public int SmallPackagePrice(int weight)
+    public double SmallPackagePrice(double weight)
     {
-        if (weight == 2)
+        if (weight == 2.0)
             return 29;
         if (weight < 10)
             return 49;

@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeAccess", "EmployeeA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeAccess.Test", "EmployeeAccess.Test\EmployeeAccess.Test.csproj", "{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackagePriceTests", "PackagePriceTests\PackagePriceTests.csproj", "{2014D79D-29E6-468A-9E5D-042EA310A8E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4C18F32-B264-4BF9-B3EB-AA4CD615FADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2014D79D-29E6-468A-9E5D-042EA310A8E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2014D79D-29E6-468A-9E5D-042EA310A8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2014D79D-29E6-468A-9E5D-042EA310A8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2014D79D-29E6-468A-9E5D-042EA310A8E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

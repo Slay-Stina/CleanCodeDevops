@@ -4,7 +4,7 @@ using CalculatorApp;
 
 public class CalculatorTests
 {
-    private readonly Calculator _sut = new Calculator();
+    private readonly Calculator _sut = new();
     
     [Fact]
     public void Add_TwoPlusTwo_ReturnsFour()
