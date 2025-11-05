@@ -1,10 +1,9 @@
 ﻿namespace PackagePriceCalculator.Models;
 
 using Extensions;
-using Interfaces;
 using Spectre.Console;
 
-public class Package : IPackage
+public class Package
 {
     public double Price { get; set; }
     public int Width { get; set; }
@@ -17,9 +16,8 @@ public class Package : IPackage
         Width = AnsiConsole.Ask<int>("Width: ");
         Height = AnsiConsole.Ask<int>("Height: ");
         Volume = Width * Height;
-        Weight = AnsiConsole.Ask<int>("Weight: ") > 0 
-            ? this.CheckAndReturnWeight() 
-            : throw new Exception("Invalid weight");
+        Weight = AnsiConsole.Ask<int>("Weight: ");
+        this.CheckAndReturnWeight();
         Price = this.IsSmallPackage()
             ? SmallPackagePrice(Weight)
             : Volume * Weight;

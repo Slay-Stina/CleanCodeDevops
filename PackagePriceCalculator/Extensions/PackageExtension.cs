@@ -1,6 +1,5 @@
 ﻿namespace PackagePriceCalculator.Extensions;
 
-using Interfaces;
 using Models;
 
 public static class PackageExtension
@@ -13,9 +12,12 @@ public static class PackageExtension
             ? throw new Exception("Package too heavy") 
             : package.Weight;
     }
-    public static bool IsSmallPackage(this IPackage package)
+    public static bool IsSmallPackage(this Package package)
     {
-        return (package.Width < 30 || package.Height < 30)
-               && (package.Width < package.Height || package.Height < package.Width);
+        if (package.Width < 30 && package.Width >= package.Height)
+            return true;
+        if (package.Height < 30 && package.Height >= package.Width)
+            return true;
+        return false;
     }
 }

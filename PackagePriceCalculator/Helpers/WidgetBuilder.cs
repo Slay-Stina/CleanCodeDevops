@@ -5,22 +5,16 @@ using Spectre.Console;
 
 public class WidgetBuilder
 {
-    public static Table table = MakeTable();
+    public static readonly Table Table = MakeTable();
     
     public Layout MakeLayout()
     {
         var layout = new Layout("Root")
-            .SplitRows
-            (
-                new Layout("Top"),
-                
+            .SplitRows(new Layout("Top"),
                 new Layout("Bottom",
-                    new  Panel(table.Expand())
+                    new  Panel(Table.Expand())
                         .Header("[blue]Created packages[/]")
-                        .Expand()
-                )
-            );
-        
+                        .Expand()));
         return layout;
     }
 
@@ -30,22 +24,22 @@ public class WidgetBuilder
         // Add some columns
         table.AddColumns(
             "Type",
-            "Price",
-            "Width",
-            "Height",
-            "Volume",
-            "Weight");
+            "Width (cm)",
+            "Height (cm)",
+            "Volume (cm²)",
+            "Weight (kg)",
+            "Price (kr)");
         return table;
     }
 
-    public void UpdateTable(Package package)
+    public static void UpdateTable(Package newPackage)
     {
-        table.AddRow(
-            nameof(package),
-            package.Price.ToString(),
-            package.Width.ToString(),
-            package.Height.ToString(),
-            package.Volume.ToString(),
-            package.Weight.ToString());
+        Table.AddRow(
+            newPackage.GetType().Name,
+            newPackage.Width.ToString(),
+            newPackage.Height.ToString(),
+            newPackage.Volume.ToString(),
+            newPackage.Weight.ToString(),
+            newPackage.Price.ToString());
     }
 }

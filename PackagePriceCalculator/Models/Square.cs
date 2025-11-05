@@ -2,8 +2,8 @@
 
 public class Square : Package
 {
-    public Square() : base()
+    public Square()
     {
-        Price = Price += 10000;
+        Price = Price += 10;
     }
 }
