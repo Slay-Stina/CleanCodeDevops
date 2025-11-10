@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CleanCodeDevOps.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb7e290c4edbe12f65bfe13980eee9d3e9756a96")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e58cee0329ff674939200c7c4ccd2a4cff16c98")]
 [assembly: System.Reflection.AssemblyProductAttribute("CleanCodeDevOps.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CleanCodeDevOps.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
